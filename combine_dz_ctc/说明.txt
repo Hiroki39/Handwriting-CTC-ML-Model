@@ -1,0 +1,4 @@
+1.通过paddle_export.py导出参数
+2.通过model_v4_wei.py进行训练
+    cfg_wei_code_path = os.path.join('./test_data', os.listdir('./test_data')[0]) //参数路劲
+    cfg_hz_feat_path = os.path.join('./train_data', os.listdir('./train_data')[0]) //样本路劲

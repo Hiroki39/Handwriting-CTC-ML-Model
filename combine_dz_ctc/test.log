@@ -1,0 +1,965 @@
+nohup: ignoring input
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='1
+0'
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
++ new_model_flag=1
++ CUDA_VISIBLE_DEVICES=5
++ python -u mulpro_decode_model_evaluate.py -m=output/1
++ python match_single.py
+Traceback (most recent call last):
+  File "match_single.py", line 5, in <module>
+    for idx, line in enumerate("hz_utf.txt", encoding="utf8"):
+TypeError: 'encoding' is an invalid keyword argument for enumerate()
++ awk '{print $3}' output.txt
++ paste /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_all.key model_file_1.tmp.raw
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.key model_file_1.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.key model_file_1.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.key model_file_1.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.key model_file_1.out
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.ref model_file_1.out0 model_file_1.rlt0 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:55564394]generate logid
+[LOGID:55564394]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 19:55:43:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:55564394]rpc request successful
+[LOGID:55564394]parse rpc response successful
+[LOGID:55564394]finish output to model_file_1.rlt0
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.ref model_file_1.out1 model_file_1.rlt1 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:10247169]generate logid
+[LOGID:10247169]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 19:55:47:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:10247169]rpc request successful
+[LOGID:10247169]parse rpc response successful
+[LOGID:10247169]finish output to model_file_1.rlt1
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.ref model_file_1.out2 model_file_1.rlt2 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:87668012]generate logid
+[LOGID:87668012]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 19:55:50:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:87668012]rpc request successful
+[LOGID:87668012]parse rpc response successful
+[LOGID:87668012]finish output to model_file_1.rlt2
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.ref model_file_1.out3 model_file_1.rlt3 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:66855785]generate logid
+[LOGID:66855785]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 19:55:57:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:66855785]rpc request successful
+[LOGID:66855785]parse rpc response successful
+[LOGID:66855785]finish output to model_file_1.rlt3
++ cp model_file_1.out model_file_1.out0 model_file_1.out1 model_file_1.out2 model_file_1.out3 model_file_1.rlt0 model_file_1.rlt1 model_file_1.rlt2 model_file_1.rlt3 model_file_1.tmp.raw decode_results
++ rm model_file_1.out model_file_1.out0 model_file_1.out1 model_file_1.out2 model_file_1.out3 model_file_1.rlt0 model_file_1.rlt1 model_file_1.rlt2 model_file_1.rlt3 model_file_1.tmp.raw
++ echo model_file_1
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z '' ]]
++ new_model_flag=1
++ CUDA_VISIBLE_DEVICES=5
++ python -u mulpro_decode_model_evaluate.py -m=output/0
++ python match_single.py
+Traceback (most recent call last):
+  File "match_single.py", line 5, in <module>
+    for idx, line in enumerate("hz_utf.txt", encoding="utf8"):
+TypeError: 'encoding' is an invalid keyword argument for enumerate()
++ awk '{print $3}' output.txt
++ paste /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_all.key model_file_0.tmp.raw
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.key model_file_0.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.key model_file_0.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.key model_file_0.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.key model_file_0.out
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.ref model_file_0.out0 model_file_0.rlt0 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:85645799]generate logid
+[LOGID:85645799]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:00:02:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:85645799]rpc request successful
+[LOGID:85645799]parse rpc response successful
+[LOGID:85645799]finish output to model_file_0.rlt0
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.ref model_file_0.out1 model_file_0.rlt1 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:93863110]generate logid
+[LOGID:93863110]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:00:05:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:93863110]rpc request successful
+[LOGID:93863110]parse rpc response successful
+[LOGID:93863110]finish output to model_file_0.rlt1
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.ref model_file_0.out2 model_file_0.rlt2 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:77455990]generate logid
+[LOGID:77455990]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:00:08:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:77455990]rpc request successful
+[LOGID:77455990]parse rpc response successful
+[LOGID:77455990]finish output to model_file_0.rlt2
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.ref model_file_0.out3 model_file_0.rlt3 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:28820475]generate logid
+[LOGID:28820475]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:00:14:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:28820475]rpc request successful
+[LOGID:28820475]parse rpc response successful
+[LOGID:28820475]finish output to model_file_0.rlt3
++ cp model_file_0.out model_file_0.out0 model_file_0.out1 model_file_0.out2 model_file_0.out3 model_file_0.rlt0 model_file_0.rlt1 model_file_0.rlt2 model_file_0.rlt3 model_file_0.tmp.raw decode_results
++ rm model_file_0.out model_file_0.out0 model_file_0.out1 model_file_0.out2 model_file_0.out3 model_file_0.rlt0 model_file_0.rlt1 model_file_0.rlt2 model_file_0.rlt3 model_file_0.tmp.raw
++ echo model_file_0
++ [[ new_model_flag -eq 1 ]]
++ sh check_n_result.sh decode_results 4
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='1
+0'
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z '' ]]
++ new_model_flag=1
++ CUDA_VISIBLE_DEVICES=5
++ python -u mulpro_decode_model_evaluate.py -m=output/2
++ python match_single.py
+Traceback (most recent call last):
+  File "match_single.py", line 5, in <module>
+    for idx, line in enumerate("hz_utf.txt", encoding="utf8"):
+TypeError: 'encoding' is an invalid keyword argument for enumerate()
++ awk '{print $3}' output.txt
++ paste /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_all.key model_file_2.tmp.raw
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.key model_file_2.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.key model_file_2.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.key model_file_2.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.key model_file_2.out
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.ref model_file_2.out0 model_file_2.rlt0 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:19279384]generate logid
+[LOGID:19279384]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:14:31:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:19279384]rpc request successful
+[LOGID:19279384]parse rpc response successful
+[LOGID:19279384]finish output to model_file_2.rlt0
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.ref model_file_2.out1 model_file_2.rlt1 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:67577917]generate logid
+[LOGID:67577917]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:14:33:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:67577917]rpc request successful
+[LOGID:67577917]parse rpc response successful
+[LOGID:67577917]finish output to model_file_2.rlt1
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.ref model_file_2.out2 model_file_2.rlt2 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:80003634]generate logid
+[LOGID:80003634]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:14:36:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:80003634]rpc request successful
+[LOGID:80003634]parse rpc response successful
+[LOGID:80003634]finish output to model_file_2.rlt2
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.ref model_file_2.out3 model_file_2.rlt3 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:66700660]generate logid
+[LOGID:66700660]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 20:14:43:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:66700660]rpc request successful
+[LOGID:66700660]parse rpc response successful
+[LOGID:66700660]finish output to model_file_2.rlt3
++ cp model_file_2.out model_file_2.out0 model_file_2.out1 model_file_2.out2 model_file_2.out3 model_file_2.rlt0 model_file_2.rlt1 model_file_2.rlt2 model_file_2.rlt3 model_file_2.tmp.raw decode_results
++ rm model_file_2.out model_file_2.out0 model_file_2.out1 model_file_2.out2 model_file_2.out3 model_file_2.rlt0 model_file_2.rlt1 model_file_2.rlt2 model_file_2.rlt3 model_file_2.tmp.raw
++ echo model_file_2
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sh check_n_result.sh decode_results 4
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='2
+1
+0'
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z '' ]]
++ new_model_flag=1
++ CUDA_VISIBLE_DEVICES=5
++ python -u mulpro_decode_model_evaluate.py -m=output/3
++ python match_single.py
+Traceback (most recent call last):
+  File "match_single.py", line 5, in <module>
+    for idx, line in enumerate("hz_utf.txt", encoding="utf8"):
+TypeError: 'encoding' is an invalid keyword argument for enumerate()
++ awk '{print $3}' output.txt
++ paste /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_all.key model_file_3.tmp.raw
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.key model_file_3.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.key model_file_3.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.key model_file_3.out
++ grep -Fwf /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.key model_file_3.out
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_single.ref model_file_3.out0 model_file_3.rlt0 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:42338928]generate logid
+[LOGID:42338928]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 21:29:03:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:42338928]rpc request successful
+[LOGID:42338928]parse rpc response successful
+[LOGID:42338928]finish output to model_file_3.rlt0
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_sfree.ref model_file_3.out1 model_file_3.rlt1 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:80877721]generate logid
+[LOGID:80877721]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 21:29:07:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:80877721]rpc request successful
+[LOGID:80877721]parse rpc response successful
+[LOGID:80877721]finish output to model_file_3.rlt1
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_ffree.ref model_file_3.out2 model_file_3.rlt2 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:57468067]generate logid
+[LOGID:57468067]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 21:29:11:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:57468067]rpc request successful
+[LOGID:57468067]parse rpc response successful
+[LOGID:57468067]finish output to model_file_3.rlt2
++ /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client /mnt/AM4_disk1/raopenghao/wtsmp_strokes_test/part2_multi.ref model_file_3.out3 model_file_3.rlt3 /mnt/AM4_disk2/gaoyunze/decode_handwriting/wer_tools/wer_client.conf
+**********wer configuration**********
+SERVER_BNS : wer-server-public.AUDIO.all
+ENCODING : 1
+IS_ENGLISH : 0
+IGNORE_CASE : 0
+IGNORE_ENAH : 0
+IGNORE_TA : 0
+IGNORE_PUNC : 0
+IGNORE_DIGITCONV : 1
+*************************************
+[LOGID:89535215]generate logid
+[LOGID:89535215]server_url: bns://wer-server-public.AUDIO.all
+TRACE: 06-02 21:29:16:   * 0 baidu/base/baidu-rpc/src/baidu/rpc/details/naming_service_thread.cpp:202] baidu::rpc::policy::BaiduNamingService("wer-server-public.AUDIO.all"): added 3
+[LOGID:89535215]rpc request successful
+[LOGID:89535215]parse rpc response successful
+[LOGID:89535215]finish output to model_file_3.rlt3
++ cp model_file_3.out model_file_3.out0 model_file_3.out1 model_file_3.out2 model_file_3.out3 model_file_3.rlt0 model_file_3.rlt1 model_file_3.rlt2 model_file_3.rlt3 model_file_3.tmp.raw decode_results
++ rm model_file_3.out model_file_3.out0 model_file_3.out1 model_file_3.out2 model_file_3.out3 model_file_3.rlt0 model_file_3.rlt1 model_file_3.rlt2 model_file_3.rlt3 model_file_3.tmp.raw
++ echo model_file_3
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sh check_n_result.sh decode_results 4
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z model_file_3 ]]
++ continue
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z model_file_3 ]]
++ continue
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z model_file_3 ]]
++ continue
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z model_file_3 ]]
++ continue
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z model_file_3 ]]
++ continue
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z model_file_3 ]]
++ continue
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
++ true
++ new_model_flag=0
+++ ls -t output
++ model_lst='3
+2
+1
+0'
++ for model in '${model_lst}'
++ echo 3
+3
++ MODEL=model_file_3
++ [[ -f model_tested.lst ]]
+++ grep model_file_3 model_tested.lst
++ [[ ! -z model_file_3 ]]
++ continue
++ for model in '${model_lst}'
++ echo 2
+2
++ MODEL=model_file_2
++ [[ -f model_tested.lst ]]
+++ grep model_file_2 model_tested.lst
++ [[ ! -z model_file_2 ]]
++ continue
++ for model in '${model_lst}'
++ echo 1
+1
++ MODEL=model_file_1
++ [[ -f model_tested.lst ]]
+++ grep model_file_1 model_tested.lst
++ [[ ! -z model_file_1 ]]
++ continue
++ for model in '${model_lst}'
++ echo 0
+0
++ MODEL=model_file_0
++ [[ -f model_tested.lst ]]
+++ grep model_file_0 model_tested.lst
++ [[ ! -z model_file_0 ]]
++ continue
++ [[ new_model_flag -eq 1 ]]
++ sleep 600
